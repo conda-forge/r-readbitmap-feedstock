@@ -15,8 +15,8 @@ source:
   sha256: 2d45ddd1ee0eb7482d5d4a9cfe41b3aa645de8af89295b4b205d73b19ac6d821
 
 build:
-  number: 0
-  skip: true  # [win32]
+  noarch: generic
+  number: 1000
 
   rpaths:
     - lib/R/lib/
@@ -48,8 +48,7 @@ about:
     extension. Reading of JPEG and PNG image depends on libjpg and libpng libraries.
     See file INSTALL for details if necessary.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'   # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'   # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
