@@ -1,5 +1,4 @@
-{% set version = '0.1-4' %}
-
+{% set version = '0.1.5' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,51 +7,69 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: readbitmap_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/readbitmap_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/readbitmap/readbitmap_{{ version }}.tar.gz
-  sha256: 2d45ddd1ee0eb7482d5d4a9cfe41b3aa645de8af89295b4b205d73b19ac6d821
+    - {{ cran_mirror }}/src/contrib/readbitmap_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/readbitmap/readbitmap_{{ version }}.tar.gz
+  sha256: 737d7d585eb33de2c200da64d16781e3c9522400fe2af352e1460c6a402a0291
 
 build:
+  merge_build_host: True  # [win]
+  number: 0
   noarch: generic
-  number: 1000
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-bmp
     - r-jpeg
     - r-png
-
+    - r-tiff
   run:
     - r-base
     - r-bmp
     - r-jpeg
     - r-png
+    - r-tiff
 
 test:
   commands:
-    - $R -e "library('readbitmap')"  # [not win]
+    - $R -e "library('readbitmap')"           # [not win]
     - "\"%R%\" -e \"library('readbitmap')\""  # [win]
 
 about:
   home: https://github.com/jefferis/readbitmap
   license: GPL (>= 2)
-  summary: Identifies and reads Windows BMP, JPEG and PNG format bitmap images. Identification
+  summary: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap images. Identification
     defaults to the use of the magic number embedded in the file rather than the file
     extension. Reading of JPEG and PNG image depends on libjpg and libpng libraries.
     See file INSTALL for details if necessary.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
+    - conda-forge/r
+
+# Package: readbitmap
+# License: GPL (>= 2)
+# Title: Simple Unified Interface to Read Bitmap Images (BMP,JPEG,PNG,TIFF)
+# Authors@R: c( person("Gregory","Jefferis", email="jefferis@gmail.com",  role = c("aut", "cre"), comment = c(ORCID = "0000-0002-0587-9355")), person("Derek", "Ogle", role = c("ctb")), person("Simon", "Barthelme", role = c("ctb")) )
+# Description: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap images. Identification defaults to the use of the magic number embedded in the file rather than the file extension. Reading of JPEG and PNG image depends on libjpg and libpng libraries. See file INSTALL for details if necessary.
+# Version: 0.1.5
+# URL: https://github.com/jefferis/readbitmap
+# BugReports: https://github.com/jefferis/readbitmap/issues
+# SystemRequirements: libjpeg, libpng
+# Imports: bmp, jpeg, png, tiff
+# Suggests: pixmap, testthat
+# RoxygenNote: 6.0.1
+# NeedsCompilation: no
+# Packaged: 2018-06-27 11:45:09 UTC; jefferis
+# Author: Gregory Jefferis [aut, cre] (<https://orcid.org/0000-0002-0587-9355>), Derek Ogle [ctb], Simon Barthelme [ctb]
+# Maintainer: Gregory Jefferis <jefferis@gmail.com>
+# Repository: CRAN
+# Date/Publication: 2018-06-27 13:48:52 UTC
