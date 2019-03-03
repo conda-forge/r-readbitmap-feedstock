@@ -1,3 +1,7 @@
+<!--
+# -*- mode: jinja -*-
+-->
+
 About r-readbitmap
 ==================
 
@@ -7,7 +11,7 @@ Package license: GPL (>= 2)
 
 Feedstock license: BSD 3-Clause
 
-Summary: Identifies and reads Windows BMP, JPEG and PNG format bitmap images. Identification defaults to the use of the magic number embedded in the file rather than the file extension. Reading of JPEG and PNG image depends on libjpg and libpng libraries. See file INSTALL for details if necessary.
+Summary: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap images. Identification defaults to the use of the magic number embedded in the file rather than the file extension. Reading of JPEG and PNG image depends on libjpg and libpng libraries. See file INSTALL for details if necessary.
 
 
 
@@ -48,6 +52,8 @@ conda search r-readbitmap --channel conda-forge
 
 About conda-forge
 =================
+
+[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -103,3 +109,9 @@ In order to produce a uniquely identifiable distribution:
  * If the version of a package **is** being increased, please remember to return
    the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
    back to 0.
+
+Feedstock Maintainers
+=====================
+
+* [@conda-forge/r](https://github.com/conda-forge/r/)
+
