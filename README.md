@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About r-readbitmap
 ==================
 
@@ -18,8 +14,15 @@ Summary: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap ima
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-readbitmap-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-readbitmap-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3480&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-readbitmap-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
