@@ -43,7 +43,7 @@ test:
 
 about:
   home: https://github.com/jefferis/readbitmap
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap images. Identification
     defaults to the use of the magic number embedded in the file rather than the file
     extension. Reading of JPEG and PNG image depends on libjpg and libpng libraries.
