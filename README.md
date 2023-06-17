@@ -1,11 +1,11 @@
-About r-readbitmap
-==================
+About r-readbitmap-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-readbitmap-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jefferis/readbitmap
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-readbitmap-feedstock/blob/main/LICENSE.txt)
 
 Summary: Identifies and reads Windows BMP, JPEG, PNG, and TIFF format bitmap images. Identification defaults to the use of the magic number embedded in the file rather than the file extension. Reading of JPEG and PNG image depends on libjpg and libpng libraries. See file INSTALL for details if necessary.
 
